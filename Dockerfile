@@ -13,10 +13,10 @@ COPY ./composer.lock ./composer.json /app/
 RUN /usr/local/bin/composer install --prefer-dist --optimize-autoloader
 
 # Add application code
-COPY .env-dist /app/.env
-COPY yii /app/
-COPY web /app/web
-COPY src /app/src
+COPY ./config/.env-dist /app/.env
+COPY ./app/yii /app/
+COPY ./app/web /app/web
+COPY ./app/src /app/src
 
 # Create folder writable by the application (non-persistent data)
 # Prepare folders for Yii 2.0 Framework (www-data)
